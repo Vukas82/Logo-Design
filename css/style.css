@@ -53,7 +53,8 @@ main {
 }
 
 #landing-image {
-    background: url(https://source.unsplash.com/vKFPC18ITyg);
+    /* background: url(https://source.unsplash.com/vKFPC18ITyg); */
+    background: url(/img/landing.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
