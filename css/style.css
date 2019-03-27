@@ -1,11 +1,57 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 body {
+    width: 100%;
     font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
     background: #eee;
     height: auto;
 }
+
+.gallery {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.gallery__image {
+    width: 100%;
+    display: block;
+}
+
+.gallery__item {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 1px 2px 40px 2px rgba(160, 160, 160, .5);
+}
+.gallery__image-caption {
+    margin-top: 1rem;
+    font-size: 0.95em;
+    color: #333;
+    font-style: italic;
+}
+
+/*  ---------------------------33.75em */
+@media only screen and (min-width:500px) {
+
+    .gallery__item {
+        flex-basis: calc(50% - 2rem);
+    }
+}
+
+@media only screen and (min-width:48em) {
+    .gallery__item {
+        flex-basis: calc((100% / 3) - 2rem);
+    }
+}
+
+@media only screen and (min-width:60em) {
+    .gallery__item {
+        flex-basis: calc((100% / 4) - 2rem);
+    }
+}
+/* --------------------------- */
 
 h1 {
     font-weight: 400;
@@ -22,19 +68,25 @@ h2 {
 }  
 
 img {
-    display: block;
-    width: 100%
+    display: flex;
+    width: 100%;
+    float: left;
 }
 
 main {
     max-width: 100%;/* 900px; */
     margin: auto;
-    box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1),
-    -30px 0px 40px rgba(0, 0, 0, 0.1)
+    /* box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1),
+    -30px 0px 40px rgba(0, 0, 0, 0.1) */
 }
 
 #landing {
     background: #fff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    /* padding: 1rem; */
+    /* box-shadow: 1px 2px 40px 2px rgba(160, 160, 160, .1); */
 }
 
 #landing-text {
@@ -54,13 +106,18 @@ main {
 
 #landing-image {
     /* background: url(https://source.unsplash.com/vKFPC18ITyg); */
-    background: url(/img/landing.jpg);
-    background-position: center;
+    /* background: url(/img/landing.jpg); */
+    background: url(/img/art-design.jpg);
+    /* background-position: center; */
+    background-position: left;
+
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
     flex: 0 1 70vw;
     margin: 0;
+    /* display: flex; */
+
 }
 
 .btn {
@@ -114,6 +171,12 @@ a {
     color: #888;
 }
 
+.contact {
+    margin-bottom: 1rem;
+    display: inline-block;
+    color: #333;
+}
+
 /* Screen sizes 500px and up*/
 @media(min-width: 500px) {
     #landing {
@@ -128,6 +191,11 @@ a {
     #landing-image {
         height: 100vh;
     }
+    #images {
+        display: flex;
+        height: 100%;
+    }
+ 
 }
 
 /* Screen sizes 700px and up */
@@ -136,4 +204,5 @@ a {
     .btn {
         padding: 1rem 3rem;
     }
+
 }
